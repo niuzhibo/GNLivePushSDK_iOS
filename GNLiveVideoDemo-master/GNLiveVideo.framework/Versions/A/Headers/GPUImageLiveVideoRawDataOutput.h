@@ -68,7 +68,10 @@ typedef void (^GPUImageLiveVideoRawDataOutputSessionStateBlock)(GNLiveVideoSessi
  *
  *  @since v1.0.0
  */
-- (void)startUploadStreamWithRoomId:(NSString *)rooomId;
+- (void)startUploadStreamWithRoomId:(NSString *)roomId;
+
+- (void)startUploadStreamWithURL:(NSString *)rtmpUrl andStreamKey:(NSString *)streamKey;
+
 
 /*!
  *  @brief  停止推流会话

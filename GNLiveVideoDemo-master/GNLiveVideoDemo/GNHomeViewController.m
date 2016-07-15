@@ -153,15 +153,13 @@
     
     [[GNLiveRoomManager sharedInstance] uploadImage:logo imageUploadingHandler:^(NSString *imageUrl) {
         
-        [[GNLiveRoomManager sharedInstance] createLiveRoom:roomName roomDescription:@"Anonymous" roomCoverUrl:imageUrl roomCreationHandler:^(GNRoomInfo *room) {
-            NSLog(@"Room: %@ created.", room.roomId);
-            
+        [[GNLiveRoomManager sharedInstance] createLiveRoom:roomName roomDescription:@"Anonymous" roomCoverUrl:imageUrl createdAt:[[NSDate date] timeIntervalSince1970] started:YES roomCreationHandler:^(GNRoomInfo *room) {
             [[GNLiveRoomManager sharedInstance] getLiveRoomList:^(NSArray *roomList) {
                 [weakSelf setRooms:roomList];
-    
+                
                 [weakSelf.tableView reloadData];
             } failure:^(NSError *error) {
-    
+                
             }];
         } failure:^(NSError *error) {
             

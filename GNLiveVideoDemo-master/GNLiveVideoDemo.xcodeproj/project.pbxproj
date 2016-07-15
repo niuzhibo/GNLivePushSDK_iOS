@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FC03331D388DA20096155B /* GNLiveVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FC03321D388DA20096155B /* GNLiveVideo.framework */; };
 		CF1B9C131D11AA5A0025A92A /* gn_live_geek_niu_text_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1B9C121D11AA5A0025A92A /* gn_live_geek_niu_text_logo@2x.png */; };
 		CF28B7ED1D0ECBCC00A3C3F8 /* gn_live_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF28B7D21D0ECBCB00A3C3F8 /* gn_live_close@2x.png */; };
 		CF28B7EE1D0ECBCC00A3C3F8 /* gn_live_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF28B7D31D0ECBCB00A3C3F8 /* gn_live_close@3x.png */; };
@@ -38,7 +39,6 @@
 		CF28B82A1D10354100A3C3F8 /* GNLiveRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28B8291D10354100A3C3F8 /* GNLiveRoomViewController.m */; };
 		CF28B82D1D10519600A3C3F8 /* GNPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF28B82C1D10519600A3C3F8 /* GNPlaybackViewController.m */; };
 		CF28B82F1D10535D00A3C3F8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF28B82E1D10535D00A3C3F8 /* WebKit.framework */; };
-		CF5F1DCC1D107BAA00FAD176 /* GNLiveVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5F1DCB1D107BAA00FAD176 /* GNLiveVideo.framework */; };
 		CF63B09D1D1AAD0000BCA01D /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = CF63B09C1D1AAD0000BCA01D /* niconiconi@2x.gif */; };
 		CF63B09F1D1AB12E00BCA01D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF63B09E1D1AB12E00BCA01D /* libz.tbd */; };
 		CF63B0A81D1B9ADB00BCA01D /* kiss@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = CF63B0A71D1B9ADB00BCA01D /* kiss@2x.gif */; };
@@ -54,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15FC03321D388DA20096155B /* GNLiveVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GNLiveVideo.framework; sourceTree = "<group>"; };
 		CF1B9C121D11AA5A0025A92A /* gn_live_geek_niu_text_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gn_live_geek_niu_text_logo@2x.png"; sourceTree = "<group>"; };
 		CF28B7D21D0ECBCB00A3C3F8 /* gn_live_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gn_live_close@2x.png"; sourceTree = "<group>"; };
 		CF28B7D31D0ECBCB00A3C3F8 /* gn_live_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gn_live_close@3x.png"; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		CF28B82B1D10519600A3C3F8 /* GNPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNPlaybackViewController.h; sourceTree = "<group>"; };
 		CF28B82C1D10519600A3C3F8 /* GNPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNPlaybackViewController.m; sourceTree = "<group>"; };
 		CF28B82E1D10535D00A3C3F8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		CF5F1DCB1D107BAA00FAD176 /* GNLiveVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GNLiveVideo.framework; sourceTree = "<group>"; };
 		CF63B09C1D1AAD0000BCA01D /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
 		CF63B09E1D1AB12E00BCA01D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CF63B0A71D1B9ADB00BCA01D /* kiss@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "kiss@2x.gif"; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF63B09F1D1AB12E00BCA01D /* libz.tbd in Frameworks */,
+				15FC03331D388DA20096155B /* GNLiveVideo.framework in Frameworks */,
 				CFF25B591D0EAEB00003C142 /* libstdc++.tbd in Frameworks */,
-				CF5F1DCC1D107BAA00FAD176 /* GNLiveVideo.framework in Frameworks */,
 				CF28B82F1D10535D00A3C3F8 /* WebKit.framework in Frameworks */,
 				CFF25B5B1D0EAEB60003C142 /* VideoToolbox.framework in Frameworks */,
 				CFF25AB91D0E57590003C142 /* GPUImage.framework in Frameworks */,
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CF63B09E1D1AB12E00BCA01D /* libz.tbd */,
-				CF5F1DCB1D107BAA00FAD176 /* GNLiveVideo.framework */,
+				15FC03321D388DA20096155B /* GNLiveVideo.framework */,
 				CF28B82E1D10535D00A3C3F8 /* WebKit.framework */,
 				CFF25AB71D0E57590003C142 /* GPUImage.framework */,
 				CFF25B5A1D0EAEB60003C142 /* VideoToolbox.framework */,

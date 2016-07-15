@@ -24,7 +24,9 @@
 @property (nonatomic, strong) NSString *h5PlayUrl;
 @property (nonatomic, strong) NSString *hlsPlayUrl;
 @property (nonatomic, strong) NSString *hlsReplayUrl;
+@property (nonatomic, strong) NSString *watermarkUrl;
 @property (nonatomic, strong) NSString *chatId;
+@property (nonatomic, assign) NSInteger status;
 @property (nonatomic, assign) NSInteger createdAt;
 
 @end

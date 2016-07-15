@@ -28,6 +28,9 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
 
 @interface GNLiveRoomManager : NSObject
 
+@property (nonatomic, strong)NSString *appKey;
+@property (nonatomic, strong)NSString *secretKey;
+
 + (instancetype)sharedInstance;
 
 /*!
@@ -36,6 +39,8 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
  *  @param roomName             直播间名称
  *  @param roomDescription      直播间描述
  *  @param roomCover            直播间封面
+ *  @param createdAt            直播创建时间
+ *  @param started              直播是否立即开始
  *  @param roomCreationHandler  返回直播间数据模型
  *  @param failure              如果请求出错，返回错误
  *
@@ -43,7 +48,7 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
  *
  *  @since v1.0.0
  */
-- (void)createLiveRoom:(NSString *)roomName roomDescription:(NSString *)roomDescription roomCoverUrl:(NSString *)roomCoverUrl roomCreationHandler:(GNLiveRoomManagerRoomCreationBlock)roomCreationHandler failure:(GNLiveRoomManagerFailureBlock)failure;
+- (void)createLiveRoom:(NSString *)roomName roomDescription:(NSString *)roomDescription roomCoverUrl:(NSString *)roomCoverUrl createdAt:(NSTimeInterval)createdAt started:(BOOL)started roomCreationHandler:(GNLiveRoomManagerRoomCreationBlock)roomCreationHandler failure:(GNLiveRoomManagerFailureBlock)failure;
 
 /*!
  *  @brief  更新直播间
@@ -51,6 +56,8 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
  *  @param roomName             直播间名称
  *  @param roomDescription      直播间描述
  *  @param roomCover            直播间封面
+ *  @param createdAt            直播创建时间
+ *  @param started              直播是否立即开始
  *  @param roomCreationHandler  返回直播间数据模型
  *  @param failure              如果请求出错，返回错误
  *
@@ -58,7 +65,7 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
  *
  *  @since v1.0.0
  */
-- (void)updateLiveRoom:(NSString *)roomName roomDescription:(NSString *)roomDescription roomCoverUrl:(NSString *)roomCoverUrl roomCreationHandler:(GNLiveRoomManagerRoomCreationBlock)roomCreationHandler failure:(GNLiveRoomManagerFailureBlock)failure;
+- (void)updateLiveRoom:(NSString *)roomId roomName:(NSString *)roomName roomDescription:(NSString *)roomDescription roomCoverUrl:(NSString *)roomCoverUrl createdAt:(NSTimeInterval)createdAt started:(BOOL)started roomCreationHandler:(GNLiveRoomManagerRoomCreationBlock)roomCreationHandler failure:(GNLiveRoomManagerFailureBlock)failure;
 
 /*!
  *  @brief  删除直播间
@@ -139,6 +146,24 @@ typedef void(^GNLiveRoomManagerUserRegistrationBlock)(NSString *appKey);
  *  @since v1.0.0
  */
 - (void)loginUser:(NSString *)phoneNumber password:(NSString *)password registrationHandler:(GNLiveRoomManagerUserRegistrationBlock)registrationHandler failure:(GNLiveRoomManagerFailureBlock)failure;
+
+/*!
+ *  @brief  获取邀请码
+ *
+ *  @param user                 用户姓名
+ *  @param company              公司名称
+ *  @param phoneNumber          手机号
+ *  @param email                邮箱
+ *  @param source               来源
+ *  @param purpose              用途
+ *  @param success              没有错误，用户登录成功
+ *  @param failure              如果请求出错，返回错误
+ *
+ *  @return 无
+ *
+ *  @since v1.0.0
+ */
+- (void)requestInvitationCode:(NSString *)user company:(NSString *)company phoneNumber:(NSString *)phoneNumber email:(NSString *)email source:(NSString *)source purpose:(NSString *)purpose success:(GNLiveRoomManagerSuccessBlock)success failure:(GNLiveRoomManagerFailureBlock)failure;
 
 
 /*!
