@@ -417,24 +417,18 @@ typedef NS_ENUM(NSInteger, GDLiveVideoCameraFlashStatus) {
     
     __weak typeof(self) weakSelf = self;
     
-    [[GNLiveRoomManager sharedInstance] startLiveStreaming:self.room.roomId steamStartedHandler:^(NSString *streamUrl) {
-    
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
-    
-            NSLog(@"Streaming url: %@", streamUrl);
-            
-            [self.rawDataOutput startUploadStreamWithRoomId:self.room.roomId];
-            
-            [self startStatistics];
-            [self setSessionState:GNLiveVideoSessionStateStarted];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
-                [weakSelf.liveVideoPushButton setEnabled:YES];
-            });
-        });
-    } failure:^(NSError *error) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
         
-    }];
+        [self.rawDataOutput startUploadStreamWithRoomId:self.room.roomId];
+        
+        [self startStatistics];
+        [self setSessionState:GNLiveVideoSessionStateStarted];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void) {
+            [weakSelf.liveVideoPushButton setEnabled:YES];
+        });
+    });
+
  }
 
 - (void)stopPushLiveVideo
